@@ -23,7 +23,7 @@ class Percentage {
 
   Percentage operator -(Percentage other) => new Percentage._internal(this._percentage - other._percentage);
 
-  bool operator ==(Percentage other) => this._percentage == other._percentage;
+  bool operator ==(other) => this._percentage == (other as Percentage)._percentage;
 
   String toString() => "${this._percentage.toString()}%";
 }

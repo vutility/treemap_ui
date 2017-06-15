@@ -76,7 +76,7 @@ class ObservableList<E> implements List<E> {
     _onAddController.add(element);
   }
   
-  void shuffle() => _list.shuffle();
+  void shuffle([_]) => _list.shuffle();
   
   void insertRange(int start, int length, [E fill]) => throw new UnsupportedError("");
   
@@ -159,15 +159,15 @@ class ObservableList<E> implements List<E> {
 
   Iterable<E> get reversed => new ObservableList<E>.from(_list.reversed);
   
-  Iterable<dynamic> map(f(E element)) => new ObservableList.from(_list.map(f));
+  Iterable<T> map<T>(T f(E element)) => new ObservableList.from(_list.map(f));
 
   Iterable<E> where(bool f(E element)) => new ObservableList<E>.from(_list.where(f));
 
-  bool contains(E element) => _list.contains(element);
+  bool contains(Object element) => _list.contains(element);
 
   E reduce(E combine(E value, E element)) => _list.reduce(combine);
   
-  dynamic fold(var initialValue, dynamic combine(var previousValue, E element)) 
+  T fold<T>(T initialValue, T combine(T previousValue, E element))
     => _list.fold(initialValue, combine);
 
   bool every(bool f(E element)) => _list.every(f);
@@ -188,7 +188,7 @@ class ObservableList<E> implements List<E> {
 
   Iterable<E> skipWhile(bool test(E value)) => new ObservableList<E>.from(_list.skipWhile(test));
 
-  Iterable expand(Iterable f(E element)) => new ObservableList.from(_list.expand(f));
+  Iterable<T> expand<T>(Iterable<T> f(E element)) => new ObservableList.from(_list.expand(f));
 
   void forEach(void f(E element)) => _list.forEach(f);
 

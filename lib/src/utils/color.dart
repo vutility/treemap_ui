@@ -5,6 +5,8 @@ class Color {
 
   String _value;
 
+  Color();
+
   Color.rgb(int r, int g, int b) {
     if (r == null || g == null || b == null || [r,g,b].any((v) => v < 0 || v > 255)) {
       throw new ArgumentError("Not a valid RGB color definition");
@@ -26,9 +28,14 @@ class Color {
     _value = hex;
   }
 
+  String get value => _value;
+  void set value(String v) {
+    _value = v;
+  }
+
   String toString() => _value;
 
-  static const Color ALICE_BLUE = const _NamedColor("AliceBlue");
+  /*static const Color ALICE_BLUE = const _NamedColor("AliceBlue");
   static const Color ANTIQUE_WHITE = const _NamedColor("AntiqueWhite");
   static const Color AQUA = const _NamedColor("Aqua");
   static const Color AQUAMARINE = const _NamedColor("Aquamarine");
@@ -174,16 +181,16 @@ class Color {
   static const Color WHITE = const _NamedColor("White");
   static const Color WHITE_SMOKE = const _NamedColor("WhiteSmoke");
   static const Color YELLOW = const _NamedColor("Yellow");
-  static const Color YELLOW_GREEN = const _NamedColor("YellowGreen");
+  static const Color YELLOW_GREEN = const _NamedColor("YellowGreen");*/
 }
 
-class _NamedColor implements Color {
-
-  final String _value;
-
-  const _NamedColor(String this._value);
-
-  String toString() => _value;
-  
-}
+//class _NamedColor implements Color {
+//
+//  final String _value;
+//
+//  const _NamedColor(String this._value);
+//
+//  String toString() => _value;
+//
+//}
 

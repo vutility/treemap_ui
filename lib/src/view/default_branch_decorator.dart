@@ -17,5 +17,5 @@ class DefaultBranchDecorator implements BranchDecorator<Branch> {
     return element;
   }
   
-  Color defineNodeColor(Branch model) => Color.GRAY;
+  Color defineNodeColor(Branch model) => new Color()..value = "Gray";
 }

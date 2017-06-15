@@ -54,16 +54,16 @@ class Strip extends LayoutAlgorithm with LayoutUtils {
     return _stripOrientation;
   }
 
-  num _avgAspectRatio(BranchNode parent, Iterable<DataModel> models, Orientation orientation) {
+  num _avgAspectRatio(BranchNode parent, List<DataModel> models, Orientation orientation) {
     final aspectRatios = _aspectRatios(parent, models, orientation);
     return aspectRatios.isEmpty ?
         0 : aspectRatios.fold(0, (accum, ratio) => accum + ratio) / aspectRatios.length;
   }
   
-  num _availableWidth(BranchNode node) =>
+  num _availableWidth(NodeContainer node) =>
       _availableWidthPercentage(node).percentageValue(node.client.width);
 
-  num _availableHeight(BranchNode node) =>
+  num _availableHeight(NodeContainer node) =>
       _availableHeightPercentage(node).percentageValue(node.client.height);
 
   Percentage _availableWidthPercentage(BranchNode node) {

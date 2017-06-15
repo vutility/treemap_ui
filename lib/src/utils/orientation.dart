@@ -16,7 +16,7 @@ class Orientation {
 
   bool get isHorizontal => !isVertical;
 
-  bool operator ==(Orientation other) => this._value == other._value;
+  bool operator ==(other) => this._value == (other as Orientation)._value;
 
   String toString() => this.isHorizontal ? "horizontal" : "vertical";
 

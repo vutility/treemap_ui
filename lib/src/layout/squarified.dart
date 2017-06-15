@@ -58,7 +58,7 @@ class Squarified extends LayoutAlgorithm with LayoutUtils {
 
   num _availableHeight(NodeContainer nodeContainer) => nodeContainer.client.height;
 
-  num _worstAspectRatio(NodeContainer parent, Iterable<DataModel> models, Orientation orientation) =>
+  num _worstAspectRatio(NodeContainer parent, List<DataModel> models, Orientation orientation) =>
       _aspectRatios(parent, models, orientation).fold(0, (accum,ratio) => max(accum,ratio));
 
 }

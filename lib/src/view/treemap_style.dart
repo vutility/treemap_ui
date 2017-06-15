@@ -21,12 +21,12 @@ class TreemapStyle {
 
   TreemapStyle({
      int branchPadding    : 2,
-     Color borderColor    : Color.BLACK,
+     Color borderColor    : null,
      int borderWidth      : 1,
      String borderStyle   : "solid"
   }){
      _branchPadding = branchPadding;
-     _borderColor = borderColor;
+     _borderColor = borderColor ?? new Color()..value = "Black";
      _borderWidth = borderWidth;
      _borderStyle = borderStyle;
      _prefix = "tm${_instanceCounter++}-";
